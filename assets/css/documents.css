@@ -1,0 +1,143 @@
+/* Documents */
+
+.doc-menu ul {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    -webkit-box-orient: vertical!important;
+    -webkit-box-direction: normal!important;
+    -ms-flex-direction: column!important;
+    flex-direction: column!important;
+    text-align: right!important;
+}
+
+.doc-menu .toctree-l1 .current {
+    color: #fff;
+    background-color: #17a2b8;
+    border-radius: .25rem;
+}
+
+.doc-menu .reference {
+    display: block;
+    padding: .5rem 1rem;
+}
+
+.section {
+    font-weight: 400;
+}
+
+.section h1 .headerlink,
+.section h2 .headerlink,
+.section .toctree-wrapper p.caption .headerlink,
+.section h3 .headerlink,
+.section h4 .headerlink,
+.section h5 .headerlink,
+.section h6 .headerlink,
+.section dl dt .headerlink,
+.section p.caption .headerlink {
+    display: none;
+    visibility: hidden;
+}
+
+.section h1,
+.section h2,
+.section h3,
+.section h4,
+.section h5,
+.section h6 {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-weight: 500;
+}
+
+.section h1 {
+    font-size: 2rem;
+    padding-top: 0;
+}
+
+.section h2 {
+    font-size: 1.5rem;
+}
+
+.section ol {
+    padding-left: 1.1em;
+}
+
+.section a {
+    color: #17a2b8;
+}
+
+.codeblock,
+pre.literal-block,
+.section .literal-block,
+.section pre.literal-block,
+div[class^='highlight'] {
+    border: 1px solid #e1e4e5;
+    padding: 0px;
+    overflow-x: auto;
+    background: #fff;
+    margin: 1px 0 24px 0;
+}
+
+.codeblock div[class^='highlight'],
+pre.literal-block div[class^='highlight'],
+.section .literal-block div[class^='highlight'],
+div[class^='highlight'] div[class^='highlight'] {
+    border: none;
+    background: none;
+    margin: 0;
+}
+
+.section .highlight>pre {
+    line-height: normal;
+}
+
+div[class^='highlight'] pre {
+    white-space: pre;
+    margin: 0;
+    padding: 12px 12px;
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    display: block;
+    overflow: auto;
+}
+
+.field-name {
+    padding-right: 1rem;
+    padding-bottom: .5rem;
+}
+
+.admonition {
+    background: #72cfdc;
+    margin-top: 1rem;
+    padding: 12px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.last {
+    line-height: 24px;
+    margin: 0;
+    font-size: 16px;
+}
+
+.admonition-title {
+    display: block;
+    color: #fff;
+    background: #076a78;
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+}
+
+code {
+    white-space: nowrap;
+    border: solid 1px #e1e4e5;
+    padding: 3px 5px;
+    overflow-x: auto;
+    color: #ff891c;
+}

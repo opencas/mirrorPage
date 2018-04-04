@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="中国科学院大学开源软件镜像站，由中国科学院开源软件协会维护。">
+  <meta name="keywords" content="镜像站,镜像源,Linux,软件源,开源">
+  <meta name="author" content="OpenCAS">
+  <link rel="icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  
+  <title>CentOS 镜像使用帮助 | 中国科学院大学开源软件镜像站 | UCAS Open Source Software Mirror</title>
+  
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/mirrors.css">
+  <link rel="stylesheet" href="/assets/css/documents.css">
+</head>
+<body>
+    <div>
+      <header class="container" style="padding: 20px 0;">
+        <nav class="navbar navbar-light navbar-expand-lg justify-content-between">
+          <a class="navbar-brand" href="index.html">
+            <img src="/assets/imgs/logo.png" alt="logo" class="img-fluid" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">STATUS</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/docs/">DOCUMENTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">SERVICES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="//opencas.org">OPENCAS</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section>
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-lg-12">
+              <div class="header-content">
+                <h1>中国科学院大学开源软件镜像站</h1>
+                <p><b style="color: #17a2b8;">原中国科学院开源软件协会(OpenCAS)开源镜像站</b>
+                  <br/>中国科技网（CSTNET）镜像站</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+            <div class="row align-items-start">
+              <div class="col-lg-8">
+                      
+  <div class="section" id="centos">
+<h1>CentOS 镜像使用帮助<a class="headerlink" href="#centos" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>镜像地址<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="http://mirrors.ucas.ac.cn/centos/">http://mirrors.ucas.ac.cn/centos/</a></p>
+</div>
+<div class="section" id="id2">
+<h2>使用帮助<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li>首先备份文件 <code class="docutils literal notranslate"><span class="pre">/etc/yum.repos.d/CentOS-Base.repo</span></code></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">CentOS</span><span class="o">-</span><span class="n">Base</span><span class="o">.</span><span class="n">repo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">yum</span><span class="o">.</span><span class="n">repos</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">CentOS</span><span class="o">-</span><span class="n">Base</span><span class="o">.</span><span class="n">repo</span><span class="o">.</span><span class="n">backup</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>根据系统版本，将相对应的内容写入 <code class="docutils literal notranslate"><span class="pre">CentOS-Base.repo</span></code> 中</li>
+</ol>
+<p><strong>CentOS 5：</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick mirrors that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other mirrors.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the
+# remarked out baseurl= line instead.
+#
+#
+
+[base]
+name=CentOS-$releasever - Base
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/os/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#released updates
+[updates]
+name=CentOS-$releasever - Updates
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/updates/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/extras/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#packages used/produced in the build but not released
+[addons]
+name=CentOS-$releasever - Addons
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/addons/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=addons
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/centosplus/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-$releasever - Contrib
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/contrib/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=contrib
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+</pre></div>
+</div>
+<p><strong>CentOS 6：</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick mirrors that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other mirrors.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the
+# remarked out baseurl= line instead.
+#
+#
+
+[base]
+name=CentOS-$releasever - Base
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/os/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+#released updates
+[updates]
+name=CentOS-$releasever - Updates
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/updates/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/extras/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/centosplus/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-$releasever - Contrib
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/contrib/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=contrib
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+</pre></div>
+</div>
+<p><strong>CentOS 7：</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick mirrors that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other mirrors.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the
+# remarked out baseurl= line instead.
+#
+#
+
+[base]
+name=CentOS-$releasever - Base
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/os/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+#released updates
+[updates]
+name=CentOS-$releasever - Updates
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/updates/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/extras/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus
+baseurl=http://mirrors.ucas.ac.cn/centos/$releasever/centosplus/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>运行 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">makecache</span></code> 以更新缓存</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>相关连接<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方主页:</th><td class="field-body"><a class="reference external" href="https://www.centos.org/">https://www.centos.org/</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Wiki:</th><td class="field-body"><a class="reference external" href="https://wiki.centos.org/">https://wiki.centos.org/</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">镜像列表:</th><td class="field-body"><a class="reference external" href="https://www.centos.org/download/mirrors/">https://www.centos.org/download/mirrors/</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+              </div>
+              <div class="col-lg-4 sidebar doc-menu">
+                
+                  
+                    
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="apache.html">Apache 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archlinux.html">Arch Linux 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archlinuxcn.html">Arch Linux CN 镜像使用帮助</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CentOS 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cran.html">CRAN 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctan.html">CTAN 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cygwin.html">Cygwin 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepin.html">Deepin 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepin-cd.html">Deepin-CD 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epel.html">EPEL 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gentoo.html">GENTOO 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openthos.html">Openthos 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu-cloud.html">Ubuntu-Cloud 镜像使用帮助</a></li>
+</ul>
+
+                  
+                
+              </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-7">
+              <p class="footer-text">本镜像站由中国科学院开源软件协会维护，由 <b><a href="http://inc.ucas.ac.cn/" style="color: #FFF; text-decoration: underline;">中国科学院大学网络信息中心</a></b> 提供支持。</p>
+              <p></p>
+              <p class="footer-text">中国科学院开源软件协会（OpenCAS）创建于2006年，是中国科学院研究生组成的开源技术社区。协会由中国科学院大学校团委指导，中国科学院大学网络中心提供支持。</p>
+              <p></p>
+              <p class="footer-text">协会秉承 <b>“开放·自由·分享”</b> 的理念聚集开源爱好者，分享开源技术，传递开源理念，为科学院的同学创建平台参与开源项目。协会现阶段面向中国科学院及其他机构个人提供开源镜像服务，并在科院体系内宣传开源文化。</p>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4 text-center">
+              <h2>开放·自由·分享</h2>
+              <p>Open·Free·Share</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+</body>

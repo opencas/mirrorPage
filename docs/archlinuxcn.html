@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="中国科学院大学开源软件镜像站，由中国科学院开源软件协会维护。">
+  <meta name="keywords" content="镜像站,镜像源,Linux,软件源,开源">
+  <meta name="author" content="OpenCAS">
+  <link rel="icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  
+  <title>Arch Linux CN 镜像使用帮助 | 中国科学院大学开源软件镜像站 | UCAS Open Source Software Mirror</title>
+  
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/mirrors.css">
+  <link rel="stylesheet" href="/assets/css/documents.css">
+</head>
+<body>
+    <div>
+      <header class="container" style="padding: 20px 0;">
+        <nav class="navbar navbar-light navbar-expand-lg justify-content-between">
+          <a class="navbar-brand" href="index.html">
+            <img src="/assets/imgs/logo.png" alt="logo" class="img-fluid" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">STATUS</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/docs/">DOCUMENTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">SERVICES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="//opencas.org">OPENCAS</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section>
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-lg-12">
+              <div class="header-content">
+                <h1>中国科学院大学开源软件镜像站</h1>
+                <p><b style="color: #17a2b8;">原中国科学院开源软件协会(OpenCAS)开源镜像站</b>
+                  <br/>中国科技网（CSTNET）镜像站</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+            <div class="row align-items-start">
+              <div class="col-lg-8">
+                      
+  <div class="section" id="arch-linux-cn">
+<h1>Arch Linux CN 镜像使用帮助<a class="headerlink" href="#arch-linux-cn" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>镜像地址<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="http://mirrors.ucas.ac.cn/archlinuxcn/">http://mirrors.ucas.ac.cn/archlinuxcn/</a></p>
+</div>
+<div class="section" id="id2">
+<h2>镜像简介<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>Arch Linux 中文社区仓库是由 Arch Linux 中文社区驱动的非官方用户仓库。</p>
+<p>包含中文用户常用软件、工具、字体/美化包等。</p>
+</div>
+<div class="section" id="id3">
+<h2>使用帮助<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li>在文件 <code class="docutils literal notranslate"><span class="pre">/etc/pacman.conf</span></code> 末尾添加</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[archlinuxcn]
+Server = http://mirrors.ucas.ac.cn/archlinuxcn/$arch
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>运行 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-Syy</span> <span class="pre">&amp;&amp;</span> <span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">archlinuxcn-keyring</span></code> 以更新缓存并导入 PGP Keys</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>相关连接<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">完整的包信息列表（包名称/架构/维护者/状态）:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://github.com/archlinuxcn/repo">https://github.com/archlinuxcn/repo</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">官方主页:</th><td class="field-body"><a class="reference external" href="https://www.archlinuxcn.org">https://www.archlinuxcn.org</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">仓库地址:</th><td class="field-body"><a class="reference external" href="http://repo.archlinuxcn.org">http://repo.archlinuxcn.org</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">镜像列表:</th><td class="field-body"><a class="reference external" href="https://github.com/archlinuxcn/mirrorlist-repo">https://github.com/archlinuxcn/mirrorlist-repo</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+              </div>
+              <div class="col-lg-4 sidebar doc-menu">
+                
+                  
+                    
+                    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="apache.html">Apache 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archlinux.html">Arch Linux 镜像使用帮助</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Arch Linux CN 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centos.html">CentOS 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cran.html">CRAN 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctan.html">CTAN 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cygwin.html">Cygwin 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepin.html">Deepin 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deepin-cd.html">Deepin-CD 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epel.html">EPEL 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gentoo.html">GENTOO 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openthos.html">Openthos 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Ubuntu 镜像使用帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ubuntu-cloud.html">Ubuntu-Cloud 镜像使用帮助</a></li>
+</ul>
+
+                  
+                
+              </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="container">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-7">
+              <p class="footer-text">本镜像站由中国科学院开源软件协会维护，由 <b><a href="http://inc.ucas.ac.cn/" style="color: #FFF; text-decoration: underline;">中国科学院大学网络信息中心</a></b> 提供支持。</p>
+              <p></p>
+              <p class="footer-text">中国科学院开源软件协会（OpenCAS）创建于2006年，是中国科学院研究生组成的开源技术社区。协会由中国科学院大学校团委指导，中国科学院大学网络中心提供支持。</p>
+              <p></p>
+              <p class="footer-text">协会秉承 <b>“开放·自由·分享”</b> 的理念聚集开源爱好者，分享开源技术，传递开源理念，为科学院的同学创建平台参与开源项目。协会现阶段面向中国科学院及其他机构个人提供开源镜像服务，并在科院体系内宣传开源文化。</p>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4 text-center">
+              <h2>开放·自由·分享</h2>
+              <p>Open·Free·Share</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+</body>
