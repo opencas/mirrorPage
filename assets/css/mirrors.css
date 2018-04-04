@@ -137,10 +137,11 @@ h3 {
 
 .table td,
 .table th {
-    padding: 0.5rem;
+    padding: 0.4rem;
+    border-top: none;
 }
 
-.fa {
+.fa-circle {
     font-size: 12px;
 }
 
