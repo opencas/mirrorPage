@@ -1,0 +1,17 @@
+User-agent: *
+
+Disallow: /archlinux/
+Disallow: /archlinuxcn/
+Disallow: /centos/
+Disallow: /ctan/
+Disallow: /cygwin/
+Disallow: /deepin/
+Disallow: /deepin-cd/
+Disallow: /epel/
+Disallow: /gentoo/
+Disallow: /gnu/
+Disallow: /mariadb/
+Disallow: /raspbian/
+Disallow: /ubuntu/
+Disallow: /ubuntu-cloud/
+Disallow: /ubuntu-releases/
